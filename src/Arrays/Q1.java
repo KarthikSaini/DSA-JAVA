@@ -22,7 +22,7 @@ public class Q1 {
 
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
+        int[] arr = {-5,1,2,3,4,5};
 
         Q1 obj = new Q1();
         obj.answer(arr);
