@@ -1,5 +1,6 @@
 package Arrays;
 
+// Stock buy and sell (max profit)
 public class Q11 {
 
     public int maxProfit(int[] arr){
