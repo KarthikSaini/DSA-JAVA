@@ -32,10 +32,6 @@ public class Q2 {
             left++;
             right--;
         }
-
-        for(int i: arr){
-            System.out.print(i+" ");
-        }
     }
 
     public static void main(String[] args) {
@@ -43,6 +39,10 @@ public class Q2 {
 
         Q2 obj = new Q2();
 //        obj.answer(arr);
+
         obj.swapUsing2Pointer(arr);
+        for(int i: arr){
+            System.out.print(i+" ");
+        }
     }
 }
