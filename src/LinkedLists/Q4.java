@@ -1,7 +1,7 @@
 package LinkedLists;
 
-// Find middle of linked list (two pointer)
-public class Q3 {
+// Detect a loop in linked list (Floyd's algorithm)
+public class Q4 {
 
     static class Node {
 
@@ -17,7 +17,6 @@ public class Q3 {
             this.val = val;
             this.next = null;
         }
-
     }
 
     public static void display(Node node){
@@ -32,37 +31,32 @@ public class Q3 {
         System.out.println("null");
     }
 
-    public static Node findMiddle(Node node){
+    public static boolean hasCycle(Node node){
 
-        if(node == null || node.next == null){
-            return node;
+        if(node == null){
+            return false;
         }
 
-        if(node.next.next == null){
-            return node.next;
+        if(node.next == node){
+            return true;
         }
+
         Node p1 = node;
         Node p2 = node;
 
-        while(p2.next != null && p2.next.next != null){
-
+        while(p2 != null && p2.next != null){
             p1 = p1.next;
             p2 = p2.next.next;
-
-            if(p2.next == null){
-                return p1;
-            }
-
-            if(p2.next.next == null){
-                return p1.next;
+            if(p1 == p2){
+                return true;
             }
 
         }
-        return p1;
+
+        return false;
     }
 
     public static void main(String[] args) {
-
         Node node1 = new Node(10);
         Node node2 = new Node(20);
         Node node3 = new Node(30);
@@ -74,10 +68,9 @@ public class Q3 {
         node3.next = node4;
         node4.next = node5;
         node5.next = node6;
+        node6.next = node3;
 
-        display(node1);
-        Node node7 = findMiddle(node1);
-        System.out.println(node7.val);
-
+//        display(node1);
+        System.out.println(hasCycle(node1));
     }
 }
