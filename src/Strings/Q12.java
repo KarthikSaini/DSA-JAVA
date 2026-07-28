@@ -112,6 +112,7 @@ public class Q12 {
             hashMap.putIfAbsent(key, new ArrayList<>());
             hashMap.get(key).add(str);
         }
+
         return new ArrayList<>(hashMap.values());
     }
 
