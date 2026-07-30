@@ -1,6 +1,7 @@
 package LinkedLists;
 
 // Merge two sorted linked lists
+// Need to focus on it
 public class Q6 {
 
     static class Node {
@@ -31,85 +32,87 @@ public class Q6 {
         System.out.println("null");
     }
 
-//    static public Node mergeSortedLinkedlist(Node node1, Node node2){
-//
-//        if(node1 == null){
-//            return node2;
-//        }
-//
-//        if(node2 == null){
-//            return node1;
-//        }
-//
-//        Node result = null;
-//        Node point1 = node1;
-//        Node point2 = node2;
-//
-//        if(node1.val < node2.val){
-//            result = node1;
-//            point1 = point1.next;
-//        } else {
-//            result = node2;
-//            point2 = point2.next;
-//        }
-//
-//        Node tempResult = result;
-//
-//        while(point1 != null && point2 != null){
-//            if(point1.val < point2.val){
-//                result.next = point1;
-//                point1 = point1.next;
-//            } else {
-//                result.next = point2;
-//                point2 = point2.next;
-//            }
-//        }
-//
-//        return tempResult;
-//    }
+    static public Node mergeSortedLinkedlist(Node node1, Node node2){
 
-    public static Node mergeSortedLinkedlist(Node node1, Node node2) {
-
-        if (node1 == null)
+        if(node1 == null){
             return node2;
+        }
 
-        if (node2 == null)
+        if(node2 == null){
             return node1;
+        }
 
-        Node head;
-        Node current;
+        Node result = null;
+        Node head = null;
 
-        if (node1.val < node2.val) {
+        if(node1.val < node2.val){
             head = node1;
+            result = head;
             node1 = node1.next;
         } else {
             head = node2;
+            result = head;
             node2 = node2.next;
         }
 
-        current = head;
-
-        while (node1 != null && node2 != null) {
-
-            if (node1.val < node2.val) {
-                current.next = node1;
+        while(node1 != null && node2 != null){
+            if(node1.val < node2.val){
+                result.next = node1;
                 node1 = node1.next;
             } else {
-                current.next = node2;
+                result.next = node2;
                 node2 = node2.next;
             }
 
-            current = current.next;
-        }
-
-        if (node1 != null) {
-            current.next = node1;
-        } else {
-            current.next = node2;
+            result = result.next;
         }
 
         return head;
     }
+
+    // ChatGPT - Solution
+//    public static Node mergeSortedLinkedlist(Node node1, Node node2) {
+//
+//        if (node1 == null)
+//            return node2;
+//
+//        if (node2 == null)
+//            return node1;
+//
+//        Node head;
+//        Node current;
+//
+//        if (node1.val < node2.val) {
+//            head = node1;
+//            node1 = node1.next;
+//        } else {
+//            head = node2;
+//            node2 = node2.next;
+//        }
+//
+//        current = head;
+//
+//        while (node1 != null && node2 != null) {
+//
+//            if (node1.val < node2.val) {
+//                current.next = node1;
+//                node1 = node1.next;
+//            } else {
+//                current.next = node2;
+//                node2 = node2.next;
+//            }
+//
+//            current = current.next;
+//        }
+//
+//        if (node1 != null) {
+//            current.next = node1;
+//        } else {
+//            current.next = node2;
+//        }
+//
+//        return head;
+//    }
 
     public static void main(String[] args) {
         Node list1Node1 = new Node(10);
@@ -138,6 +141,5 @@ public class Q6 {
         display(list2Node1);
 
         display(mergeSortedLinkedlist(list1Node1, list2Node1));
-        System.out.println("completed");
     }
 }
