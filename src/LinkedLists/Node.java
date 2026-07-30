@@ -27,6 +27,20 @@ public class Node {
         System.out.println("null");
     }
 
+    public static Node add(int[] arr){
+
+            Node head = new Node(-1);
+
+            Node temp = head;
+
+            for(int i : arr){
+                temp.next = new Node(i);
+                temp = temp.next;
+            }
+
+            return head.next;
+    }
+
     }
 
 
