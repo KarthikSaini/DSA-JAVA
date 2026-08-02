@@ -12,12 +12,12 @@ public class Stack {
         arr = new int [size];
     }
 
-//    public void push(int num){
-//        if(pointer < arr.length-1){
-//            pointer++;
-//            arr[pointer] = num;
-//        }
-//    }
+    public void push(int num){
+        if(pointer < arr.length-1){
+            pointer++;
+            arr[pointer] = num;
+        }
+    }
 
     public Integer pop(){
         if(pointer > -1){
