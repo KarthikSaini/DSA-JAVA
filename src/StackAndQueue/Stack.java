@@ -1,5 +1,6 @@
 package StackAndQueue;
 
+// Implement stack using array
 public class Stack {
 
     int pointer;
