@@ -1,34 +1,46 @@
 package StackAndQueue;
 
-// Implement queue using array
+// Implement Queue using Circular Array
 public class Queue {
 
-    int pointer;
-    int retival;
+    public int[] arr;
 
-    int[] arr;
+    public int retival;
 
+    public int pointer;
 
-    Queue(int size){
-        pointer = size;
-        arr = new int [size];
-        retival = size;
+    public int size;
+
+    Queue(int capacity) {
+        arr = new int[capacity];
+        retival = 0;
+        pointer = -1;
+        size = 0;
     }
 
-    public void push(int num){
-        if(pointer > 0){
-            pointer--;
-            arr[pointer] = num;
+    public void push(int num) {
+
+        if (isFull()) {
+            return;
         }
+
+        pointer = (pointer + 1) % arr.length;
+        arr[pointer] = num;
+        size++;
     }
 
-    public Integer pop(){
-        if (retival > pointer) {
-            retival--;
-            return arr[retival];
+    public Integer pop() {
 
+        if (isEmpty()) {
+            return null;
         }
-        return null;
+
+        int value = arr[retival];
+
+        retival = (retival + 1) % arr.length;
+        size--;
+
+        return value;
     }
 
     public Integer peek() {
@@ -38,22 +50,30 @@ public class Queue {
             return null;
         }
 
-        return arr[retival - 1];
+        return arr[retival];
     }
 
-    public void display(){
-        for(int i=arr.length-1; i >= pointer; i--){
-            System.out.print(arr[i]+" -> ");
+    public void display() {
+
+        if (isEmpty()) {
+            return;
+        }
+
+        int current = retival;
+
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[current] + " -> ");
+            current = (current + 1) % arr.length;
         }
 
         System.out.println("Finished");
     }
 
-    public boolean isEmpty(){
-        return pointer >= arr.length;
+    public boolean isEmpty() {
+        return size == 0;
     }
 
-    public boolean isFull(){
-        return pointer == 0;
+    public boolean isFull() {
+        return size == arr.length;
     }
 }

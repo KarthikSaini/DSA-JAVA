@@ -16,6 +16,7 @@ public class Q2 {
 //        System.out.println(queue.peek()+" Peek");
         System.out.println(queue.pop());
         queue.display();
+        System.out.println(queue.isEmpty());
 
 
     }
