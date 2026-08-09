@@ -1,7 +1,7 @@
 package Tree;
 
 
-// Start learning about Tree Data Structures
+// Start learning about Tree Data Structure
 public class buildingTree {
 
     public static class Node{
