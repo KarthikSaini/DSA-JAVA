@@ -4,7 +4,7 @@ public class Q215 {
 
     public static int findKthLargest(int[] nums, int k) {
 
-        // Working fine but
+        // Working fine but not optimised
         int largest = Integer.MIN_VALUE;
         int index = -1;
         int last = largest;
