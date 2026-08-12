@@ -41,17 +41,15 @@ public class Q1046 {
             }
         }
 
-        int x = priorityQueue.poll();
-//        int y = priorityQueue.poll();
-//
-        System.out.println(x+"   sout"+priorityQueue.peek());
+//        int x = priorityQueue.poll();
+//        System.out.println(x+"   sout"+priorityQueue.peek());
 //        if(x > y){
 //            return (x-y);
 //        } else if (x < y){
 //            return (y - x);
 //        }
 
-        return x;
+        return priorityQueue.poll();
     }
 
     public static void main(String[] args) {
