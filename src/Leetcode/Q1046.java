@@ -48,7 +48,7 @@ public class Q1046 {
 //        } else if (x < y){
 //            return (y - x);
 //        }
-//        
+//
 
         return priorityQueue.poll();
     }
