@@ -34,8 +34,33 @@ public class Q852 {
 //        return index;
 //    }
 
+//    Approach 3 - using binary search
+    static public int peakIndexInMountainArray(int[] arr) {
+        int left = 0;
+        int right = arr.length-1;
+        int max = Integer.MIN_VALUE;
+        int index = -1;
+
+        while(left < right){
+            int mid = (left + right) / 2 ;
+
+            if(arr[mid] > max){
+                max = arr[mid];
+                index = mid;
+            }
+
+            if(arr[mid] < arr[mid+1]){
+                left = mid + 1;
+            } else {
+                right = right - 1;
+            }
+        }
+
+        return index;
+    }
+
     public static void main(String[] args) {
-        int[] input = {1, 2, 3, 4, 5, 6, 10, 9, 7, 4, 2};
-        System.out.println(peakIndexInMountainArray(input));
+        int[] input = {1, 10, 9, 8, 7, 6, 5, 4, 3, 2};
+        System.out.println("Result "+peakIndexInMountainArray(input));
     }
 }
