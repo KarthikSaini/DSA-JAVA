@@ -3,11 +3,24 @@ package Leetcode;
 public class Q162 {
 
     static public int findPeakElement(int[] nums) {
-        return -1;
+
+        int left = 0;
+        int right = nums.length-1;
+
+        while(left < right){
+            int mid = (left + right) / 2;
+
+            if(nums[mid] < nums[mid + 1]){
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
     }
 
     public static void main(String[] args) {
-        int[] input = {1, 10, 9, 8, 7, 6, 5, 4, 3, 2};
+        int[] input = {1,2,1,3,5,6,4};
         System.out.println("Result "+findPeakElement(input));
     }
 }
