@@ -2,6 +2,7 @@ package Leetcode;
 
 public class Q162 {
 
+//    Solved
     static public int findPeakElement(int[] nums) {
 
         int left = 0;
