@@ -2,7 +2,7 @@ package Leetcode;
 
 public class Q162 {
 
-//    Solved
+//    Solved with binary search
     static public int findPeakElement(int[] nums) {
 
         int left = 0;
