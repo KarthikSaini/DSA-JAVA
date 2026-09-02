@@ -2,7 +2,7 @@ package Leetcode;
 
 public class Q540 {
 
-//    Working but need to optimise
+//    Working but need to optimise below code with Binary search
     static public int singleNonDuplicate(int[] nums) {
 
         if(nums.length == 1){
