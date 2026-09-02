@@ -2,6 +2,7 @@ package Leetcode;
 
 public class Q540 {
 
+//    Working but need to optimise
     static public int singleNonDuplicate(int[] nums) {
 
         if(nums.length == 1){
@@ -15,8 +16,6 @@ public class Q540 {
 
         for(int i=0; i<nums.length-1; i = i + 2){
             if(nums[i] != nums[i+1]){
-
-//                System.out.println("return"+ nums[i] + "   " +nums[i+1]);
                 return nums[i];
             }
         }
